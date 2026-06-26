@@ -5,191 +5,282 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projeto de documentação tecnica</title>
+  <title>Documentação Técnica — Linguagem C</title>
 </head>
 
 <body>
 
   <nav id="navbar">
-    <header>Documentacao tecnica</header>
+    <header>Linguagem C</header>
     <ul>
       <li>
-        <a class="nav-link" href="#introducao">introducao</a>
+        <a class="nav-link" href="#Introducao_a_Linguagem_C">Introducao a Linguagem C</a>
       </li>
       <li>
-        <a class="nav-link" href="#topico_1">topico_1</a>
+        <a class="nav-link" href="#Tipos_de_Dados_e_Variaveis">Tipos de Dados e Variaveis</a>
       </li>
       <li>
-        <a class="nav-link" href="#topico_2">topico_2</a>
+        <a class="nav-link" href="#Estruturas_de_Controle">Estruturas de Controle</a>
       </li>
       <li>
-        <a class="nav-link" href="#topico_3">topico_3</a>
+        <a class="nav-link" href="#Funcoes">Funcoes</a>
       </li>
       <li>
-        <a class="nav-link" href="#topico_4">topico_4</a>
+        <a class="nav-link" href="#Ponteiros_e_Memoria">Ponteiros e Memoria</a>
       </li>
     </ul>
   </nav>
+
   <main id="main-doc">
-    <section class="main-section" id="introducao">
-      <header>introducao</header>
-      <p>Princípios Lógicos
+
+    <section class="main-section" id="Introducao_a_Linguagem_C">
+      <header>Introducao a Linguagem C</header>
       <p>
-      <p> Princípio da Identidade [p=p] Afirma que a
-        identidade de determinada coisa com ela
-        mesma. "Toda coisa é o que é.“
-        Princípio da (não-) Contradição Uma coisa
-        (afirmação, proposição, termo, etc) -
-        considerada sob o mesmo aspecto - não
-        pode ser e não-ser ao mesmo tempo.</p>
-      <p> Princípio do Terceiro Excluído: Dada uma
-        noção qualquer ou ela é verdadeira ou é
-        falsa, isto é, não há um possível meio
-        termo entre afirmação ou negação.</p>
+        A linguagem C foi criada por Dennis Ritchie nos laboratórios da Bell Labs entre 1969 e 1973.
+        É uma linguagem de programação de propósito geral, estruturada e de médio nível, que combina
+        características de linguagens de alto e baixo nível. Até hoje é amplamente utilizada em sistemas
+        operacionais, drivers, sistemas embarcados e softwares que exigem alto desempenho.
+      </p>
+      <p>
+        Todo programa em C começa sua execução pela função <code>main()</code>. A estrutura básica inclui
+        a inclusão de bibliotecas com <code>#include</code>, declaração de variáveis, lógica do programa
+        e retorno ao sistema operacional. O exemplo abaixo mostra o clássico "Olá, Mundo":
+      </p>
 
       <ul>
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
-        <li>D</li>
-        <li>E</li>
+        <li>Criada em 1972 por Dennis Ritchie na Bell Labs</li>
+        <li>Base para linguagens como C++, Java e C#</li>
+        <li>Utilizada no desenvolvimento do sistema operacional Unix</li>
+        <li>Permite manipulação direta de memória com ponteiros</li>
+        <li>Padronizada pela ISO como C89, C99, C11 e C17</li>
       </ul>
 
- <code> main()
-{
-// definicao de variaveis
-int i, j;
-float x;
-//entrada de dados
-26
-scanf("%d", &i);
-scanf("%d %f", &j, &x);
-// exibicao de dados
-printf("I= %d\n", i);
-printf("J= %d\nX= %f\n", j, x);
-system("PAUSE");
-} </code>
+      <code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Ola, Mundo!\n");
+    return 0;
+}</code>
 
     </section>
 
 
-    <section class="main-section" id="topico_1">
-      <header>topico_1</header>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora similique a quidem veritatis necessitatibus
-        omnis expedita esse cum exercitationem, tenetur natus, nulla ut ab quod, recusandae suscipit magni nisi
-        sapiente!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quis, obcaecati excepturi esse reiciendis, aut
-        perferendis temporibus voluptatibus minus ad corporis nobis, eum magnam. Ipsam laudantium recusandae architecto
-        deleniti fuga!</p>
+    <section class="main-section" id="Tipos_de_Dados_e_Variaveis">
+      <header>Tipos de Dados e Variaveis</header>
+      <p>
+        Em C, todas as variáveis devem ser declaradas antes de serem usadas, informando seu tipo.
+        O tipo determina quanto espaço de memória será reservado e quais operações podem ser realizadas.
+        Os tipos primitivos mais comuns são <code>int</code>, <code>float</code>, <code>double</code>,
+        <code>char</code> e <code>void</code>.
+      </p>
+      <p>
+        C também permite a criação de tipos compostos como arrays, structs e unions. A escolha correta
+        do tipo de dado é fundamental para o desempenho e a precisão do programa. O exemplo abaixo
+        demonstra a declaração e uso dos principais tipos:
+      </p>
       <ul>
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
+        <li><strong>int</strong> — armazena números inteiros, geralmente com 4 bytes</li>
+        <li><strong>float</strong> — armazena números reais com precisão simples (4 bytes)</li>
+        <li><strong>double</strong> — armazena números reais com precisão dupla (8 bytes)</li>
+        <li><strong>char</strong> — armazena um único caractere (1 byte)</li>
+        <li><strong>unsigned</strong> — modificador que elimina o sinal, dobrando o valor positivo máximo</li>
+      </ul>
+
+      <code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 20;
+    float altura = 1.75;
+    double saldo = 1500.99;
+    char inicial = 'A';
+
+    printf("Idade: %d\n", idade);
+    printf("Altura: %.2f\n", altura);
+    printf("Saldo: %.2lf\n", saldo);
+    printf("Inicial: %c\n", inicial);
+
+    return 0;
+}</code>
+
     </section>
 
-    <section class="main-section" id="topico_2">
-      <header>topico_2</header>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti obcaecati ipsam doloremque laudantium fugiat
-        adipisci sint alias dolores delectus blanditiis quod earum et nemo, vero accusamus, quibusdam totam eius
-        ducimus.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quaerat repellendus ea deserunt quod nisi
-        dolore quam, natus ut debitis maiores tempore maxime, laboriosam accusantium facilis facere. Amet, expedita
-        perspiciatis.</p>
+    <section class="main-section" id="Estruturas_de_Controle">
+      <header>Estruturas de Controle</header>
+      <p>
+        As estruturas de controle determinam o fluxo de execução de um programa. Em C, as principais
+        são as condicionais (<code>if</code>, <code>else</code>, <code>switch</code>) e os laços de
+        repetição (<code>for</code>, <code>while</code>, <code>do-while</code>). Elas permitem que o
+        programa tome decisões e repita blocos de código conforme necessário.
+      </p>
+      <p>
+        O uso correto das estruturas de controle é essencial para criar algoritmos eficientes. O laço
+        <code>for</code> é ideal quando se sabe o número de repetições; o <code>while</code> é usado
+        quando a condição de parada depende de um evento durante a execução. Veja abaixo exemplos
+        de cada estrutura:
+      </p>
       <ul>
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
+        <li><strong>if/else</strong> — executa um bloco se a condição for verdadeira, outro caso contrário</li>
+        <li><strong>switch</strong> — compara uma variável com múltiplos valores possíveis</li>
+        <li><strong>for</strong> — repete um bloco um número definido de vezes</li>
+        <li><strong>while</strong> — repete enquanto a condição for verdadeira</li>
+        <li><strong>do-while</strong> — executa ao menos uma vez antes de verificar a condição</li>
+      </ul>
 
-         <code> main()
-{
-// definicao de variaveis
-int i, j;
-float x;
-//entrada de dados
-26
-scanf("%d", &i);
-scanf("%d %f", &j, &x);
-// exibicao de dados
-printf("I= %d\n", i);
-printf("J= %d\nX= %f\n", j, x);
-system("PAUSE");
-} </code>
+      <code>#include &lt;stdio.h&gt;
+
+int main() {
+    int i;
+
+    /* laco for: imprime de 1 a 5 */
+    for (i = 1; i &lt;= 5; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+
+    /* condicional if/else */
+    if (i &gt; 5) {
+        printf("Loop encerrado.\n");
+    } else {
+        printf("Ainda em execucao.\n");
+    }
+
+    return 0;
+}</code>
+
+      <code>#include &lt;stdio.h&gt;
+
+int main() {
+    int nota = 7;
+
+    switch (nota) {
+        case 10: printf("Excelente!\n"); break;
+        case 7:
+        case 8:  printf("Bom!\n"); break;
+        case 5:
+        case 6:  printf("Regular.\n"); break;
+        default: printf("Reprovado.\n");
+    }
+
+    return 0;
+}</code>
+
     </section>
 
-    <section class="main-section" id="topico_3">
-      <header>topico_3</header>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sit consequatur veniam voluptate vero
-        consequuntur amet corporis, voluptatibus ex necessitatibus, unde ipsa rem nostrum quasi ab iusto. Porro, dolorum
-        aspernatur.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias temporibus a nemo unde veritatis animi
-        doloribus mollitia repudiandae repellendus facilis reprehenderit accusantium debitis officiis earum, fuga
-        corrupti magnam distinctio aliquam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, suscipit! Aperiam, voluptate nesciunt iste
-        atque harum nulla error? Delectus corrupti esse rerum nesciunt laboriosam voluptate nostrum reprehenderit
-        perspiciatis quisquam maiores?</p>
+    <section class="main-section" id="Funcoes">
+      <header>Funcoes</header>
+      <p>
+        Funções são blocos de código reutilizáveis que realizam uma tarefa específica. Em C, toda função
+        deve ser declarada com um tipo de retorno, um nome e uma lista de parâmetros. O uso de funções
+        melhora a organização, legibilidade e manutenção do código, além de evitar repetição desnecessária.
+      </p>
+      <p>
+        C permite funções recursivas, ou seja, funções que chamam a si mesmas. Também é possível passar
+        variáveis por valor ou por referência (usando ponteiros). A declaração antecipada de uma função
+        é chamada de protótipo e deve aparecer antes de sua chamada no código.
+      </p>
+      <p>
+        A biblioteca padrão de C oferece diversas funções prontas, como <code>printf()</code>,
+        <code>scanf()</code>, <code>strlen()</code> e <code>malloc()</code>, acessíveis via
+        <code>#include</code> dos cabeçalhos correspondentes.
+      </p>
       <ul>
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
+        <li><strong>void</strong> — tipo de retorno para funções que não retornam valor</li>
+        <li><strong>return</strong> — encerra a função e devolve um valor ao chamador</li>
+        <li><strong>protótipo</strong> — declaração antecipada da assinatura da função</li>
+        <li><strong>recursão</strong> — técnica onde a função chama a si mesma</li>
+        <li><strong>parâmetros</strong> — valores recebidos pela função para processar</li>
+      </ul>
 
-         <code> main()
-{
-// definicao de variaveis
-int i, j;
-float x;
-//entrada de dados
-26
-scanf("%d", &i);
-scanf("%d %f", &j, &x);
-// exibicao de dados
-printf("I= %d\n", i);
-printf("J= %d\nX= %f\n", j, x);
-system("PAUSE");
-} </code>
- <code> main()
-{
-// definicao de variaveis
-int i, j;
-float x;
-//entrada de dados
-26
-scanf("%d", &i);
-scanf("%d %f", &j, &x);
-// exibicao de dados
-printf("I= %d\n", i);
-printf("J= %d\nX= %f\n", j, x);
-system("PAUSE");
-} </code>
+      <code>#include &lt;stdio.h&gt;
+
+/* prototipo da funcao */
+int soma(int a, int b);
+
+int main() {
+    int resultado = soma(3, 7);
+    printf("Soma: %d\n", resultado);
+    return 0;
+}
+
+int soma(int a, int b) {
+    return a + b;
+}</code>
+
+      <code>#include &lt;stdio.h&gt;
+
+/* funcao recursiva: fatorial */
+int fatorial(int n) {
+    if (n == 0) return 1;
+    return n * fatorial(n - 1);
+}
+
+int main() {
+    printf("5! = %d\n", fatorial(5));
+    return 0;
+}</code>
+
     </section>
 
-    <section class="main-section" id="topico_4">
-      <header>topico_4</header>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minus reprehenderit sequi libero facere odit
-        illo esse ullam dolorem magnam. Minima, voluptates molestias repudiandae eius dolores dolorum! Molestias,
-        placeat ducimus?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam quam libero cum voluptatem culpa optio
-        amet sit commodi consequuntur repellat ea vero, excepturi itaque, quae sint totam! Illum, aspernatur. Optio?</p>
+    <section class="main-section" id="Ponteiros_e_Memoria">
+      <header>Ponteiros e Memoria</header>
+      <p>
+        Ponteiros são variáveis que armazenam o endereço de memória de outra variável. São um dos
+        recursos mais poderosos — e perigosos — da linguagem C. Com ponteiros é possível manipular
+        diretamente a memória, criar estruturas de dados dinâmicas como listas encadeadas e passar
+        grandes volumes de dados para funções sem copiá-los.
+      </p>
+      <p>
+        A alocação dinâmica de memória em C é feita com as funções <code>malloc()</code>,
+        <code>calloc()</code> e <code>realloc()</code>, todas da biblioteca <code>stdlib.h</code>.
+        É obrigatório liberar a memória alocada com <code>free()</code> ao fim do uso, evitando
+        vazamentos de memória (memory leaks).
+      </p>
       <ul>
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
-        <code> main()
-{
-// definicao de variaveis
-int i, j;
-float x;
-//entrada de dados
-26
-scanf("%d", &i);
-scanf("%d %f", &j, &x);
-// exibicao de dados
-printf("I= %d\n", i);
-printf("J= %d\nX= %f\n", j, x);
-system("PAUSE");
-} </code>
+        <li><strong>&amp;</strong> — operador que retorna o endereço de uma variável</li>
+        <li><strong>*</strong> — operador de indireção, acessa o valor no endereço apontado</li>
+        <li><strong>malloc()</strong> — aloca um bloco de memória sem inicializar</li>
+        <li><strong>calloc()</strong> — aloca e inicializa a memória com zero</li>
+        <li><strong>free()</strong> — libera a memória alocada dinamicamente</li>
+      </ul>
+
+      <code>#include &lt;stdio.h&gt;
+
+int main() {
+    int x = 10;
+    int *ptr = &amp;x;
+
+    printf("Valor de x: %d\n", x);
+    printf("Endereco de x: %p\n", ptr);
+    printf("Valor via ponteiro: %d\n", *ptr);
+
+    *ptr = 20;
+    printf("Novo valor de x: %d\n", x);
+
+    return 0;
+}</code>
+
+      <code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    int n = 5;
+    int *vetor = (int*) malloc(n * sizeof(int));
+
+    if (vetor == NULL) {
+        printf("Erro ao alocar memoria.\n");
+        return 1;
+    }
+
+    for (int i = 0; i &lt; n; i++) {
+        vetor[i] = i * 2;
+        printf("vetor[%d] = %d\n", i, vetor[i]);
+    }
+
+    free(vetor);
+    return 0;
+}</code>
+
     </section>
-
-
 
   </main>
 
